@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './signin.css'
+import{FirebaseContext}from '../../stor/firebasecontext'
+
  
 
 function Signin() {
 
+const [email ,setEmail] =useState('')
+const [password, setPassword]=useState('')
+const {firebase}=useContext(FirebaseContext)
+
+const handleSubmit=(e)=>{
+  e.preventDefault()
+  console.log("ffc",firebase)
+}
 
 
   return (
@@ -16,13 +26,16 @@ function Signin() {
           </div>
     
             <div className='sin'>
-              <form className='form1'  action="">
-                <input placeholder="Email or phone number" className='semail' type="email" />
-                <input  type="password" className='semail' placeholder='password..' />
-             
+              <form className='form1' onSubmit={handleSubmit} action="">
+                <input placeholder="Email or phone number" className='semail' type="email"
+                value={email}  onChange={(e)=>setEmail(e.target.value)}/>
+                <input  type="password" className='semail' placeholder='password..'
+                value={password}  onChange={(e)=>setPassword(e.target.value)}
+                 />
+                 <button className='sign1'>sign in</button>
               </form>             
         
-              <button className='sign1'>sign in</button>
+              
               <label htmlFor="input"><input className='checkbox' type="checkbox" /> Remember me</label>
               <p className='checkbox-help' >Need help ?</p>
 

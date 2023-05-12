@@ -42,7 +42,7 @@ const handleButtonClick = (buttonIndex) => {
             <span> what is netflix?</span>
             <div className='btplus'><FaPlus/></div>
             </button>
-            {activeButton === 1  && <div className='bt-active'>
+            {activeButton === 1  && <div className='bt'>
             <p> Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices <br /><br />You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!
             </p>
             </div>}

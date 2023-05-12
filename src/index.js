@@ -12,7 +12,7 @@ root.render(
        <App />
    </FirebaseContext.Provider> 
   
-
+,document.getElementById('root')
 );
 
 
